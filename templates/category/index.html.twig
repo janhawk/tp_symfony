@@ -10,24 +10,19 @@
 
 {% block body %}
     
-    {% for categroy in products %}
+    {% for category in categorys %}
         <div class="col-md-6 col-lg-4 col-xl-3 p-3">
             <div class="card">
-                <img src="{{ asset('img/categroy/' ~ categroy.img1) }}" class="card-img-top p-3" alt="image principale du jeu {{ categroy.name }}">
-                {% if categroy.createdAt|date('Y-m-d') >= "now"|date_modify("-20 day")|date('Y-m-d') %}
+                <img src="{{ asset('img/categroy/' ~ category.img1) }}" class="card-img-top p-3" alt="image principale du jeu {{ category.name }}">
+                {% if category.createdAt|date('Y-m-d') >= "now"|date_modify("-20 day")|date('Y-m-d') %}
                     <span class="new_product">Nouveauté</span>
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ categroy.name }}</h5>
-                    <p class="card-text">{{ categroy.abstract|u.truncate(70, '...', false) }}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ categroy.minPlayers }} à {{ categroy.maxPlayers }} joueur(s)</li>
-                    <li class="list-group-item">{{ categroy.price|number_format(2, ',', ' ') }} €</li>
-                </ul>
+                    <h5 class="card-title">{{ category.name }}</h5>
+
                 <div class="card-body text-center">
-                    <a href="{{ path('product_show', {'slug': categroy.slug}) }}" class="card-link btn btn-outline-primary">Détails</a>
-                    <a href="#" class="card-link btn btn-{{ categroy.quantity != 0 ? 'success' : 'danger disabled' }}"><i class="bi bi-cart-plus-fill"></i></a>
+                    <a href="{{ path('product_show', {'slug': category.slug}) }}" class="card-link btn btn-outline-primary">Détails</a>
+                    <a href="#" class="card-link btn btn-{{ category.quantity != 0 ? 'success' : 'danger disabled' }}"><i class="bi bi-cart-plus-fill"></i></a>
                 </div>
             </div>
         </div>

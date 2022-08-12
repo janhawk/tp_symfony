@@ -20,103 +20,13 @@
                 }) }}
                 {{ form_help(categoryForm.name) }}
             </div>
-            <div class="col-3">
-                {{ form_row(categoryForm.quantity, {
-                    'label': 'Quantité',
-                    'attr': {
-                        'placeholder': 'Ex.: 12'
-                    }
-                }) }}
-            </div>
-            <div class="col-3">
-                {{ form_row(categoryForm.price, {
-                    'label': 'Prix (en €)',
-                    'attr': {
-                        'placeholder': 'Ex.: 123.45'
-                    }
-                }) }}
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-6">
-                {{ form_row(categoryForm.abstract, {
-                    'label': 'Résumé',
-                    'attr': {
-                        'placeholder': 'Ex.: Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita provident et quod. Vero aliquid praesentium earum eos, facilis doloremque tempora ab quidem incidunt ! Ea, dignissimos. Quas sed modi sapiente dolorem ?'
-                    }
-                }) }}
-            </div>
+        </div>
             <div class="col-6">
                 {{ form_row(categoryForm.description, {
                     'label': 'Description',
                     'attr': {
                         'placeholder': 'Ex.: Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita provident et quod. Vero aliquid praesentium earum eos, facilis doloremque tempora ab quidem incidunt ! Ea, dignissimos. Quas sed modi sapiente dolorem ?'
-                    }
-                }) }}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                {{ form_row(categoryForm.min_players, {
-                    'label': 'Joueurs minimum',
-                    'attr': {
-                        'placeholder': 'Ex.: 1'
-                    }
-                }) }}
-            </div>
-            <div class="col">
-                {{ form_row(categoryForm.max_players, {
-                    'label': 'Joueurs maximum',
-                    'attr': {
-                        'placeholder': 'Ex.: 2'
-                    }
-                }) }}
-            </div>
-            <div class="col">
-                {{ form_row(categoryForm.minimum_age, {
-                    'label': 'Âge minimum',
-                    'attr': {
-                        'placeholder': 'Ex.: 3'
-                    }
-                }) }}
-            </div>
-            <div class="col">
-                {{ form_row(categoryForm.duration, {
-                    'label': 'Durée'
-                }) }}
-            </div>
-            <div class="col">
-                {{ form_row(categoryForm.editor, {
-                    'label': 'Éditeur',
-                    'attr': {
-                        'placeholder': 'Ex.: Jan'
-                    }
-                }) }}
-            </div>
-            <div class="col">
-                {{ form_row(categoryForm.category, {
-                    'label': 'Catégorie',
-                    'placeholder': '-- sélectionner --'
-                }) }}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6">
-                {{ form_row(categoryForm.theme, {
-                    'label': 'Thème(s)',
-                    'attr': {
-                        'placeholder': 'Ex.: France, guerre'
-                    }
-                }) }}
-            </div>
-            <div class="col-6">
-                {{ form_row(categoryForm.mecanism, {
-                    'label': 'Mécanisme(s)',
-                    'attr': {
-                        'placeholder': 'Ex.: placement, draft'
                     }
                 }) }}
             </div>

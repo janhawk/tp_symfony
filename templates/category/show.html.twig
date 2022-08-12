@@ -20,7 +20,7 @@
             <div class="col-4">
                 <img src="{{ asset('img/category/' ~ category.img1) }}" alt="photo secondaire du jeu {{ category.name }}" class="w-100">
             </div>
-            {% if category.img2 != null %}
+            {# {% if category.img2 != null %}
                 <div class="col-4">
                     <img src="{{ asset('img/category/' ~ category.img2) }}" alt="photo secondaire du jeu {{ category.name }}" class="w-100">
                 </div>
@@ -29,40 +29,9 @@
                 <div class="col-4">
                     <img src="{{ asset('img/category/' ~ category.img3) }}" alt="photo secondaire du jeu {{ category.name }}" class="w-100">
                 </div>
-            {% endif %}
+            {% endif %} #}
         </div>
     </div>
-    <div class="col-md-8 col-lg-5 offset-md-2 offset-lg-1 mt-5 mt-lg-0">
-        <h2>{{ category.name }}</h2>
-        <hr class="text-secondary">
-        <div class="my-4">
-            <p class="fs-3">
-                {{ category.price|number_format(2, ',', ' ') }} €
-                {% if category.quantity != 0 %}
-                    <span class="fs-4 text-success">En stock</span>
-                {% else %}
-                    <span class="fs-4 text-danger">Rupture de stock</span>
-                {% endif %}
-            </p>
-            <p>{{ category.abstract }}</p>
-            <p>
-                <span class="badge bg-secondary p-2 me-2">{{ category.minPlayers }} à {{ category.maxPlayers }} joueur(s)</span>
-                <span class="badge bg-secondary p-2 me-2">Environ {{ category.duration|date('h') > 0 ? category.duration|date('h') * 60 + category.duration|date('i') : category.duration|date('i') }} minutes</span>
-                <span class="badge bg-secondary p-2">À partir de {{ category.minimumAge }} an(s)</span>
-            </p>
-        </div>
-        <hr class="text-secondary">
-        <div class="my-4">
-            <p>Éditeur : {{ category.editor }}</p>
-            <p>Thème(s) : {{ category.theme }}</p>
-            <p>Mécanisme(s) : {{ category.mecanism }}</p>
-        </div>
-        <hr class="text-secondary">
-        <div class="mt-4">
-            <p class="text-end">
-                <a href="#" class="btn btn-{{ category.quantity != 0 ? 'success' : 'danger disabled' }}">Ajouter au panier</a>
-            </p>
-        </div>
     </div>
     <div class="row mt-5">
         <div class="col-md-8 col-lg-10 offset-md-2 offset-lg-1">

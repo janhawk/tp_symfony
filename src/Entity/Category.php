@@ -23,12 +23,12 @@ class Category
     private ?string $slug = null;
 
     #[ORM\Column(length: 45, nullable: true)]
-    private ?string $img = null;
+    private ?string $img1 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Product::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'category_id', targetEntity: Product::class, orphanRemoval: true)]
     private Collection $products;
 
     public function __construct()
@@ -65,14 +65,14 @@ class Category
         return $this;
     }
 
-    public function getImg(): ?string
+    public function getImg1(): ?string
     {
-        return $this->img;
+        return $this->img1;
     }
 
-    public function setImg(?string $img): self
+    public function setImg1(?string $img1): self
     {
-        $this->img = $img;
+        $this->img1 = $img1;
 
         return $this;
     }
@@ -106,6 +106,13 @@ class Category
 
         return $this;
     }
+    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
 
     public function removeProduct(Product $product): self
     {
